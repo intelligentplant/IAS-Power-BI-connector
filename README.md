@@ -80,7 +80,44 @@ Current limitations are mostly around the UI which are improving the usability a
 
 ### A&E meta tags
 
-Available A&E meta tags can be found [here]( "Intelligent Plant Industrial App Store Developers - A&E meta tags")
+The following meta tags are available for asset, tag, alarm identifier data aggregations (string before the meta tag will be used to match A&E data which will be used for analysis).
+For example:
+
+* `Oil Co/Osprey/KPI No ALM` - This will get number of alarms for *Oil Co/Osprey* asset.
+* `Oil Co/Osprey/LIC040/KPI No ALM` - This will get number of alarms for *LIC040* tag.
+* `Oil Co/Osprey/LIC040/HIHI/KPI No ALM` - This will get number of alarms for *LIC040 HIHI* tag.
+
+> * \* KPI supports snapshot query (NOW value). Now value in AA defaults to **last event type message - 1m** (as start time) to **last event type message** (as end time). 
+> * ** KPI supports trend query (value over time).
+> * :triangular_flag_on_post: Indicates that KPI supports excluding empty aggregation buckets, for example if property `ExludeEmptyBuckets` set to true it won't take empty days when calculating averages. See examples for more info.
+
+| KPI                                                   | UOM  | NOW*  | TREND** | Functions |
+| ------------------------------------------------------|:----:|:-----:|:-------:|:---------:|
+| `KPI avg no alm per 10m` :triangular_flag_on_post:<br/>*Mean average number of alarms per 10 minute buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 10 minutes.* | count | Y | Y | |
+| **KPI Avg No Alm per 1h** :triangular_flag_on_post:<br/>*Mean average number of alarms per 1 hour buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 1 hour.*         | count | Y | Y | |
+| **KPI Avg No Alm per 1d** :triangular_flag_on_post:<br/>*Mean average number of alarms per 1 day buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 1 day.*           | count | Y | Y | |
+| **kpi md avg no alm per 10m** :triangular_flag_on_post:<br/>*Median average number of alarms per 10 minute bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*    | count | Y | Y | |
+| **kpi md avg no alm per 1h** :triangular_flag_on_post:<br/>*Median average number of alarms per 1 hour bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*        | count | Y | Y | |
+| **kpi md avg no alm per 1d** :triangular_flag_on_post:<br/>*Median average number of alarms per 1 day bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*         | count | Y | Y | |
+| **KPI avg max no alm per 10m** :triangular_flag_on_post:<br/>*Average highest alarm count in 10 minute bucket per selected interval in chosen period. NOTE: interval should be greater than 10 minutes*           | count | Y | Y | |
+| **KPI Highest 10m**<br/>*Highest alarm count in 10 minute bucket per selected interval in chosen period. NOTE: interval should be greater than 10 minutes.*                                                       | count | Y | Y | |
+| **KPI Highest 1h**<br/>*Highest alarm count in 1 hour bucket per selected interval in chosen period. Note: interval should be greater than 1 hour.*                                                               | count | Y | Y | |
+| **KPI No Alm**<br/>*Alarm count per selected interval in chosen period.*                                                                                            | count | Y | Y | |
+| **KPI No Int**<br/>*Intervention count per selected interval in chosen period.*                                                                                     | count | Y | Y | |
+| **KPI No Dis**<br/>*Disable count per selected interval in chosen period.*                                                                                          | count | Y | Y | |
+| **KPI % 10m > 5 Alm** :triangular_flag_on_post:<br/>*Percentage of 10 minute periods containing more than 5 alarms per selected interval in chosen period. NOTE: interval should be higher than 10 minutes.* | %     | Y | Y | |
+| **KPI % 10m > 10 Alm** :triangular_flag_on_post:<br/>*Percentage of 10 minute periods containing more than 10 alarms per selected interval in chosen period. NOTE: interval should be higher than 10 minutes.*| %     | Y | Y | |
+| **KPI % 1h > 30 Alm** :triangular_flag_on_post:<br/>*Percentage of 1 hour periods containing more than 30 alarms per selected interval in chosen period. NOTE: interval should be higher than 1 hour.*       | %     | Y | Y | |
+| **KPI No 10m Accpt** :triangular_flag_on_post:<br/>*Count of number of 10 minute buckets with an acceptable number (0 or 1) of alarms per selected interval in chosen period. NOTE: interval should be higher than 10 minutes.* | count | Y | Y | |
+| **KPI No 1h Accpt** :triangular_flag_on_post:<br/>*Count of number of 1 hour buckets with an acceptable number (<=6) of alarms per selected interval in chosen period. NOTE: interval should be higher than 1 hour.*           | count | Y | Y | |
+| **KPI No 1d Accpt** :triangular_flag_on_post:<br/>*Count of number of 1 day buckets with an acceptable number (<=144) of alarms per selected interval in chosen period. NOTE: interval should be higher than 1 day.*           | count | Y | Y | |
+| **KPI % Top 10 MFA**<br/>*Percentage contribution of top 10 most frequent alarms in period (bad actors) per selected interval in chosen period.*                                                                  | %     | Y | Y | |
+| **KPI % Top 10 MFI**<br/>*Percentage contribution of top 10 most frequent interventions in selected period (bad actors) per selected interval in chosen period.*                                                  | %     | Y | Y | |
+| **KPI Longest Flood**<br/>*Longest flood time span per selected interval in the chosen period.*                                                                                                                   | ms    | Y | Y | |
+| **KPI % time in flood**<br/>*Percentage time spent in flood per selected interval in the chosen period.*                                                                                                          | %     | Y | Y | |
+| **KPI Flood Count**<br/>*Flood count per selected interval for chosen period. NOTE: interval should be greater than 0 minutes.*                                                                                   | count | Y | Y | |
+| **KPI avg % time > steady target (>1)**<br/>*n/a*                                                                                                                                                                 | %     | Y | Y | |
+| **KPI avg % time > upset target (>10)**<br/>*n/a*                                                                                                                                                                 | %     | Y | Y | |
 
 ### Sequence of Events :bookmark_tabs:
 
