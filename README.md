@@ -90,9 +90,9 @@ During the log in process you can authorise Power BI to access your data sources
 
 ## Known limitations
 
-Current limitations are mostly around the UI which are improving the usability and ease of access. These limitations ar emostly impsoed by Power Platform framework. Ongoing conversations with Microsoft support are being held to improve current available controls for develoeprs. 
+Current limitations are mostly around the UI which are improving the usability and ease of access. These limitations are mostly impsoed by Power Platform framework. Ongoing conversations with Microsoft support are being held to improve current available controls for developers.
 
-## Using Alarm & Evnet meta tags :alarm_clock:
+## Using Alarm & Event meta tags :alarm_clock:
 
 ### A&E meta tags
 
@@ -112,9 +112,9 @@ For example:
 | `KPI avg no alm per 10m` :triangular_flag_on_post:<br/>*Mean average number of alarms per 10 minute buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 10 minutes.* | count | Y | Y | |
 | **KPI Avg No Alm per 1h** :triangular_flag_on_post:<br/>*Mean average number of alarms per 1 hour buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 1 hour.*         | count | Y | Y | |
 | **KPI Avg No Alm per 1d** :triangular_flag_on_post:<br/>*Mean average number of alarms per 1 day buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 1 day.*           | count | Y | Y | |
-| **kpi md avg no alm per 10m** :triangular_flag_on_post:<br/>*Median average number of alarms per 10 minute bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*    | count | Y | Y | |
-| **kpi md avg no alm per 1h** :triangular_flag_on_post:<br/>*Median average number of alarms per 1 hour bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*        | count | Y | Y | |
-| **kpi md avg no alm per 1d** :triangular_flag_on_post:<br/>*Median average number of alarms per 1 day bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*         | count | Y | Y | |
+| **KPI md avg no alm per 10m** :triangular_flag_on_post:<br/>*Median average number of alarms per 10 minute bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*    | count | Y | Y | |
+| **KPI md avg no alm per 1h** :triangular_flag_on_post:<br/>*Median average number of alarms per 1 hour bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*        | count | Y | Y | |
+| **KPI md avg no alm per 1d** :triangular_flag_on_post:<br/>*Median average number of alarms per 1 day bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*         | count | Y | Y | |
 | **KPI avg max no alm per 10m** :triangular_flag_on_post:<br/>*Average highest alarm count in 10 minute bucket per selected interval in chosen period. NOTE: interval should be greater than 10 minutes*           | count | Y | Y | |
 | **KPI Highest 10m**<br/>*Highest alarm count in 10 minute bucket per selected interval in chosen period. NOTE: interval should be greater than 10 minutes.*                                                       | count | Y | Y | |
 | **KPI Highest 1h**<br/>*Highest alarm count in 1 hour bucket per selected interval in chosen period. Note: interval should be greater than 1 hour.*                                                               | count | Y | Y | |
@@ -191,7 +191,7 @@ A bad actor report can also be obtained using meta tags.
 
 #### A number (list) of bad actors
 
-To retrieve a list of bad actors use the following ofrmat
+To retrieve a list of bad actors use the following format
 
 ```text
 {Company}/{Plant}/ALM BA report/{number-of-bad-actors}.{property-name}-a
