@@ -22,12 +22,11 @@ Intelligent Plant developed the Industrial App Store which enables interaction w
 
 ### Log in
 
-Sign in using your Google, Linked In or your Microsoft credentials. If you have an organisation registered with the Industrial App Store you can use your organisation credentials (more infor [here](https://appstore.intelligentplant.com/wiki/doku.php?id=general:app_store_users "IAS - log in")).
+Sign in using your Google, Linked In or your Microsoft credentials. If you have an organisation registered with the Industrial App Store you can use your organisation credentials (more info [here](https://appstore.intelligentplant.com/wiki/doku.php?id=general:app_store_users "IAS - log in")).
 
 During the log in process you can authorise Power BI to access your data sources or feel free to browse demo data source available by default for you to play around with.
 
-
-
+![Log in Industrial App Store Connector](https://intelligentplant.com/datasheets/powerplatform/resources/ias-pp-start-connector-log-in.gif)
 
 ## Supported actions (functions)
 
