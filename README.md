@@ -12,6 +12,23 @@ Intelligent Plant developed the Industrial App Store which enables interaction w
 * [Power BI and Alarm & Event Bad Actors](https://community.powerbi.com/t5/Community-Blog/Power-BI-and-Alarm-amp-Event-Bad-Actors/ba-p/953020)
 * [Alarm Analysis Dashboard design insights](https://community.powerbi.com/t5/Data-Stories-Gallery/Alarm-Analysis-Dashboard-design-insights/m-p/1091669)
 
+## Getting started
+
+### Get the connector
+
+ The connector is certified and distributed by Microsoft with Power BI updates. Just click Get data and look for *Industrial App Store* data connector.
+
+![Start Industrial App Store Connector](https://intelligentplant.com/datasheets/powerplatform/resources/ias-pp-start-connector.gif)
+
+### Log in
+
+Sign in using your Google, Linked In or your Microsoft credentials. If you have an organisation registered with the Industrial App Store you can use your organisation credentials (more infor [here](https://appstore.intelligentplant.com/wiki/doku.php?id=general:app_store_users "IAS - log in")).
+
+During the log in process you can authorise Power BI to access your data sources or feel free to browse demo data source available by default for you to play around with.
+
+
+
+
 ## Supported actions (functions)
 
 * **Tag Search**</br>Performs a tag search on the specified data source.
