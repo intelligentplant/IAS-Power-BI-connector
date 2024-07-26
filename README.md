@@ -103,11 +103,11 @@ For example:
 * `Oil Co/Osprey/LIC040/KPI No ALM` - This will get number of alarms for *LIC040* tag.
 * `Oil Co/Osprey/LIC040/HIHI/KPI No ALM` - This will get number of alarms for *LIC040 HIHI* tag.
 
-> * \* KPI supports snapshot query (NOW value). Now value in AA defaults to **last event type message - 1m** (as start time) to **last event type message** (as end time). 
+> * \* KPI supports snapshot query (NOW value). The aggregation period for "NOW" is one month from last event received.
 > * ** KPI supports trend query (value over time).
 > * :triangular_flag_on_post: Indicates that KPI supports excluding empty aggregation buckets, for example if property `ExludeEmptyBuckets` set to true it won't take empty days when calculating averages. See examples for more info.
 
-| KPI                                                   | UOM  | NOW*  | TREND** | Functions |
+| KPI                                                   | Unit  | NOW*  | TREND** | Functions |
 | ------------------------------------------------------|:----:|:-----:|:-------:|:---------:|
 | `KPI avg no alm per 10m` :triangular_flag_on_post:<br/>*Mean average number of alarms per 10 minute buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 10 minutes.* | count | Y | Y | |
 | **KPI Avg No Alm per 1h** :triangular_flag_on_post:<br/>*Mean average number of alarms per 1 hour buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 1 hour.*         | count | Y | Y | |
