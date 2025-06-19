@@ -22,7 +22,7 @@ Intelligent Plant developed the Industrial App Store which enables interaction w
 
 ### Log in
 
-Sign in using your Google, Linked In or your Microsoft credentials. If you have an organisation registered with the Industrial App Store you can use your organisation credentials (more info [here](https://appstore.intelligentplant.com/wiki/doku.php?id=general:app_store_users "IAS - log in")).
+Sign in using your Microsoft credentials. If you have an organisation registered with the Industrial App Store you can use your organisation credentials (more info [here](https://appstore.intelligentplant.com/wiki/doku.php?id=general:app_store_users "IAS - log in")).
 
 During the log in process you can authorise Power BI to access your data sources or feel free to browse demo data source available by default for you to play around with.
 
@@ -35,62 +35,87 @@ During the log in process you can authorise Power BI to access your data sources
 | Name        	| Required 	| Type   	| Description                                                      	| Default 	| Example 	  |
 |-------------	|----------	|--------	|------------------------------------------------------------------	|---------	|------------ |
 | Tag name    	| true     	| string 	| The name filter to use.                                          	| *       	| *LIC**    	|
-| Page size   	| false    	| number 	| Page size for the results.                                       	| 20      	| *5*       	|
+| Page size   	| false    	| number 	| Page size for the results.                                       	| 10      	| *5*       	|
 | Page number 	| false    	| number 	| The page number of the matching results that should be returned. 	| 0       	| *2*       	|
 
 * **Get Snapshot**</br>Performs a snapshot (NOW) data query on a single data source.
 
 | Name        	| Required 	| Type   	| Description                                                                                                                                                                                           	| Default 	| Example         	|
 |-------------	|----------	|--------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|-----------------	|
-| Tag Name(s) 	| true     	| string 	| Comma separated tag names to get data for.                                                                                                                                                            	| *n/a*   	| Sinusoid,LIC040 	|
-| Display     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g.OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                 	|
+| Tags 	| true     	| string 	| Comma separated tag names to get data for.                                                                                                                                                            	| *n/a*   	| *Sinusoid,LIC040* 	|
+| Tag Value Field     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                 	|
 
-* **Get Data** :key:</br>Performs a historical data query.
-
-| Name             	| Required 	| Type   	| Description                                                                                                       	| Default 	| Example                          	|
-|------------------	|----------	|--------	|-------------------------------------------------------------------------------------------------------------------	|---------	|----------------------------------	|
-| Tag Name(s)      	| true     	| string 	| Comma separated tag names to get data for.                                                                        	| *n/a*   	| Sinusoid,LIC040                  	|
-| Start Date       	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                            	| *n/a*   	| *-10d, 2018-01-15                	|
-| End date         	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                              	| *n/a*   	| *, *-1h, 2020-09-01T00:00:00     	|
-| Function         	| true     	| option 	| Data function/aggregation to use when performing data query.                                                      	| *n/a*   	| Interp, Plot, Min, Max, Avg, Raw 	|
-| Interval         	| false    	| string 	| The sample interval.                                                                                              	| *n/a*   	| 20s, 3h, 1d                      	|
-| Number of Points 	| false    	| number 	| The maximum number of points to return per tag. Takes precedence over the *Interval* parameter if both specified. 	| *n/a*   	| 10, 150                          	|
-| Display     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g.OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
 
 * **Get Processed** :key:</br>Perform aggregated or processed data query.
 
 | Name             	| Required 	| Type   	| Description                                                                                                       	| Default 	| Example                          	|
 |------------------	|----------	|--------	|-------------------------------------------------------------------------------------------------------------------	|---------	|----------------------------------	|
-| Tag Name(s)      	| true     	| string 	| Comma separated tag names to get data for.                                                                        	| *n/a*   	| Sinusoid,LIC040                  	|
-| Start Date       	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                            	| *n/a*   	| *-10d, 2018-01-15                	|
-| End date         	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                              	| *n/a*   	| *, *-1h, 2020-09-01T00:00:00     	|
-| Function         	| true     	| option 	| Data function/aggregation to use when performing data query.                                                      	| *n/a*   	| Interp, Plot, Min, Max, Avg, Raw 	|
-| Interval         	| false    	| string 	| The sample interval.                                                                                              	| *n/a*   	| 20s, 3h, 1d |
-| Display     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g.OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
+| Tags            	| true     	| string 	| Comma separated tag names to get data for.                                                                        	| *n/a*   	| *Sinusoid,LIC040*                  	|
+| Start Date       	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                            	| *n/a*   	|* *-10d, 2018-01-15*                	|
+| End date         	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                              	| *n/a*   	|* *-1h, 2020-09-01T00:00:00*     	|
+| Data Function    	| true     	| option 	| Data function/aggregation to use when performing data query.                                                      	| *n/a*   	| *Interp, Min, Max, Avg*          	|
+| Sample Interval  	| true    	| string 	| The sample interval.                                                                                              	| *n/a*   	| *20s, 3h, 1d* |
+| Tag Value Field  	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
 
 * **Get Plot** :key:</br>Performs a historical data query using *Plot* data function.
 
-| Name        	| Required 	| Type   	| Description                                                                                                                                                                                                   	| Default 	| Example                      	|
+| Name        	| Required 	| Type   	|Description                                                                                                                | Default 	| Example                      	|
 |-------------	|----------	|--------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|------------------------------	|
-| Tag Name(s) 	| true     	| string 	| Comma separated tag names to get data for.                                                                                                                                                                    	| *n/a*   	| Sinusoid,LIC040              	|
-| Start Date  	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                                                                                                                        	| *n/a*   	| *-10d, 2018-01-15            	|
-| End date    	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                                                                                                                          	| *n/a*   	| *, *-1h, 2020-09-01T00:00:00 	|
-| Intervals   	| false    	| string 	| The maximum number of points to return per tag.                                                                                                                                                               	| *n/a*   	| 20s, 3h, 1d                  	|
-| Display     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g.OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
+| Tag Name(s) 	| true     	| string 	| Comma separated tag names to get data for.                                                                                                                                                                | *n/a*   	| *Sinusoid,LIC040*              	|
+| Start Date  	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                                                                                                                        	| *n/a*   	|* *-10d, 2018-01-15*           	|
+| End date    	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                                                                                                                          	| *n/a*   	|* *-1h, 2020-09-01T00:00:00* 	|
+| Plot Width (Pixels)| true    	| string 	| Plot functions on size of screen area, only importing the necessary data to accurately visualise the data trend over time. Enter in your approximate screen width.                                                                                                                                                               	| *n/a*   	| *1920, 720, 100*                  	|
+| Tag Value Field| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
 
 * **Get Raw** :key:</br>Performs a historical data query using *Raw* data function.
 
 | Name        	| Required 	| Type   	| Description                                                                                                                                                                                                   	| Default 	| Example                      	|
 |-------------	|----------	|--------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|------------------------------	|
-| Tag Name(s) 	| true     	| string 	| Comma separated tag names to get data for.                                                                                                                                                                    	| *n/a*   	| Sinusoid,LIC040              	|
-| Start Date  	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                                                                                                                        	| *n/a*   	| *-10d, 2018-01-15            	|
-| End date    	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                                                                                                                          	| *n/a*   	| *, *-1h, 2020-09-01T00:00:00 	|
-| Points   	| false    	| string 	| The maximum number of points to return per tag.                                                                                                                                                               	| *n/a*   	| 20s, 3h, 1d                  	|
-| Display     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g.OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
+| Tag Name(s) 	| true     	| string 	| Comma separated tag names to get data for.                                                                                                                                                                    	| *n/a*   	| *Sinusoid,LIC040*              	|
+| Start Date  	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                                                                                                                        	| *n/a*   	|* *-10d, 2018-01-15*            	|
+| End date    	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                                                                                                                          	| *n/a*   	|* *-1h, 2020-09-01T00:00:00* 	|
+| Maximum Sample Count   	| true    	| string 	| The maximum number of points to return per tag.                                                                                                                                                               	| *n/a*   	| *20s, 3h, 1d*                  	|
+| Tag Value Field     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
+
+* **Get Data** :key:</br>Performs a historical data query. <br>**NB - This is a legacy function. We recommend using Get Processed or Get Plot instead.**</br>
+
+| Name             	| Required 	| Type   	| Description                                                                                                       	| Default 	| Example                          	|
+|------------------	|----------	|--------	|-------------------------------------------------------------------------------------------------------------------	|---------	|----------------------------------	|
+| Tags            	| true     	| string 	| Comma separated tag names to get data for.                                                                        	| *n/a*   	| *Sinusoid,LIC040*                  	|
+| Start Date       	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                            	| *n/a*   	|* *-10d, 2018-01-15*                	|
+| End date         	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                              	| *n/a*   	|* *-1h, 2020-09-01T00:00:00*     	|
+| Data Function    	| true     	| option 	| Data function/aggregation to use when performing data query.                                                      	| *n/a*   	| *Interp, Min, Max, Avg* 	        |
+| Sample Interval         	| false    	| string 	| The sample interval.                                                                                              	| *n/a*   	| *20s, 3h, 1d*                      	|
+| Sample Count 	| false    	| number 	| The maximum number of points to return per tag. Takes precedence over the *Interval* parameter if both specified. 	| *n/a*   	| *10, 150*                          	|
+| Tag Value Field     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
+
+## Alarm Specific
+These options only appear when selecting an Alarm Analysis data source.
+
+* **Bad Actors** :key:</br>Alarm Specific. Obtains the events that generate the most alarms in the selected asset.
+
+| Name        	| Required 	| Type   	| Description                                                                                                                                                                                                   	| Default 	| Example                      	|
+|-------------	|----------	|--------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|------------------------------	|
+| Asset name 	| true     	| option 	| Dropdown selection of available assets you can view alarms from.                                                                                                                                                                    	| *n/a*   	| *Oil Co/Osprey*              	|
+| Start Date  	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                                                                                                                        	| *n/a*   	|* *-10d, 2018-01-15*            	|
+| End date    	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                                                                                                                          	| *n/a*   	|* *-1h, 2020-09-01T00:00:00* 	|
+| Report event type   	| false    	| option 	| Choose to import only null, alarm, or intervention type data.                                                                                                                                                               	| *n/a*   	| *null, ALM, INT*                  	|
+| Number of bad actors     	| false    	| string 	| Select how many bad actors to import. E.g., entering "10" would give you the top 10 bad actors. 	| *n/a* 	|  *5, 10, 20*                            	|
+
+* **Sequence of Events** :key:</br>Alarm Specific. Obtain a time ordered history of events associated with the selected asset. This can be filtered to show events related to specific tags.
+
+| Name        	| Required 	| Type   	| Description                                                                                                                                                                                                   	| Default 	| Example                      	|
+|-------------	|----------	|--------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|------------------------------	|
+| Asset name 	| true     	| option 	| Dropdown selection of available assets you can view alarms from.                                                                                                                                                                    	| *n/a*   	| *Oil Co/Osprey*              	|
+| Start Date  	| true     	| string 	| Absolute or relative start time to use when performing the data query.                                                                                                                                        	| *n/a*   	|* *-10d, 2018-01-15*            	|
+| End date    	| true     	| string 	| Absolute or relative end time to use when performing the data query.                                                                                                                                          	| *n/a*   	|* *-1h, 2020-09-01T00:00:00* 	|
+| SoE filter string   	| false    	| string 	| Apply a filter to load only events containing a specific combination of characters. E.g. *tag=HV* would show only events related to tags starting with HV                                                                                                                                                              	| *n/a*   	| *null, ALM, INT*                  	|
+| Page Number     	| false    	| string 	| Linked to Page Size, select which page of events you want to load 	| *n/a*	| *1, 2, 3*                             	|
+| Page size     	| false    	| string 	| enter in the number of events to show per page 	| *n/a* 	| *5, 10, 20*                             	|
 
 ## Known limitations
 
-Current limitations are mostly around the UI which are improving the usability and ease of access. These limitations are mostly impsoed by Power Platform framework. Ongoing conversations with Microsoft support are being held to improve current available controls for developers.
+Current limitations are mostly around the UI which are improving the usability and ease of access. These limitations are mostly imposed by Power Platform framework. Ongoing conversations with Microsoft support are being held to improve current available controls for developers.
 
 ## Using Alarm & Event meta tags :alarm_clock:
 
@@ -109,7 +134,7 @@ For example:
 
 | KPI                                                   | Unit  | NOW*  | TREND** | Functions |
 | ------------------------------------------------------|:----:|:-----:|:-------:|:---------:|
-| `KPI avg no alm per 10m` :triangular_flag_on_post:<br/>*Mean average number of alarms per 10 minute buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 10 minutes.* | count | Y | Y | |
+| **KPI avg no alm per 10m** :triangular_flag_on_post:<br/>*Mean average number of alarms per 10 minute buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 10 minutes.* | count | Y | Y | |
 | **KPI Avg No Alm per 1h** :triangular_flag_on_post:<br/>*Mean average number of alarms per 1 hour buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 1 hour.*         | count | Y | Y | |
 | **KPI Avg No Alm per 1d** :triangular_flag_on_post:<br/>*Mean average number of alarms per 1 day buckets per selected interval in chosen period. NOTE: interval should be equal or greater than 1 day.*           | count | Y | Y | |
 | **KPI md avg no alm per 10m** :triangular_flag_on_post:<br/>*Median average number of alarms per 10 minute bucket, per interval for chosen period. NOTE: selected interval should be greater than 10 minutes.*    | count | Y | Y | |
