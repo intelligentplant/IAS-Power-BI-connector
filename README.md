@@ -243,15 +243,11 @@ Industrial App Store Connector was built using
 * [Industrial App Store API](https://appstore.intelligentplant.com/wiki/doku.php?id=dev:app_store_developers "Intelligent Plant Industrial App Store Developers")
 * [Power Query (informally known as "M")](https://docs.microsoft.com/en-us/previous-versions/mt270235(v=msdn.10)?redirectedfrom=MSDN)
 
-## Contributing
-
-Coming soon
-
 ## Useful links
 
 * [Intelligent Plant](https://www.intelligentplant.com "Intelligent Plant")
 * [Industrial App Store](https://appstore.intelligentplant.com "Industrial App Store")
-* [Industrial App Store Wiki](https://appstore.intelligentplant.com/wiki "Industrial App Store wiki")
+* [Industrial App Store Wiki](https://wiki.intelligentplant.com "Industrial App Store wiki")
 * [Intelligent Plant YouTube channel](https://www.youtube.com/channel/UCGWOUFOjAEk_QW9w1wWWPDw "Intelligent Plant YouTube channel")
 
 ## Support
@@ -267,4 +263,3 @@ For any questions please contact Intelligent Plant Ltd [here](https://www.intell
 * Hat tip to anyone who contributed.
 * Inspiration
 
-![IAS Connector](https://www.intelligentplant.com/datasheets/powerplatform/resources/Welcome-Industrial-AppStore.png "Intelligent Plant = Industrial App Store")
