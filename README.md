@@ -4,9 +4,9 @@ Intelligent Plant’s [Industrial App Store](https://appstore.intelligentplant.c
 
 ## Industrial App Store - What is it
 
-Intelligent Plant developed the Industrial App Store which enables interaction with all the different historian data through a unified API. At start of May 2020 Intelligent Plant released an official, Microsoft certified Industrial App Store connector for Power Automate. No more hefty SQL queries or Excel document interrogations with no easy real-time update option or complicated architecture solutions, simply install Industrial App Store connect and out of the box you will be able to connect to Aspentech IP.21, OSIsoft PI, Honeywell Dynamo, OPC DA & HDA, Siemens and many more. This allows our customers to bring data from various sources into Microsoft Automate flows to deliver insights that weren’t possible before. Real-time updates prompt money-saving decisions by engineers that also increase plant safety and efficiency :fire:.
+Intelligent Plant developed the Industrial App Store which enables interaction with all the different historian data through a unified API. At start of May 2020 Intelligent Plant released an official, Microsoft certified Industrial App Store connector for Power Automate. No more hefty SQL queries or Excel document interrogations with no easy real-time update option or complicated architecture solutions, simply install Industrial App Store connect and out of the box you will be able to connect to Aspentech IP.21, OSIsoft PI, Honeywell Dynamo, OPC DA & HDA, Siemens and many more. This allows our customers to bring data from various sources into Microsoft Automate flows to deliver insights that weren’t possible before. Real-time updates prompt money-saving decisions by engineers that also increase plant safety and efficiency.
 
-## Publications :newspaper:
+## Publications
 
 * [Connecting industrial historians to Microsoft Power BI. One connector to get them all…](https://community.powerbi.com/t5/Community-Blog/Connecting-industrial-historians-to-Microsoft-Power-BI-One/ba-p/942200)
 * [Power BI and Alarm & Event Bad Actors](https://community.powerbi.com/t5/Community-Blog/Power-BI-and-Alarm-amp-Event-Bad-Actors/ba-p/953020)
@@ -16,9 +16,7 @@ Intelligent Plant developed the Industrial App Store which enables interaction w
 
 ### Get the connector
 
- The connector is certified and distributed by Microsoft with Power BI updates. Just click Get data and look for *Industrial App Store* data connector.
-
-![Start Industrial App Store Connector](https://intelligentplant.com/datasheets/powerplatform/resources/ias-pp-start-connector.gif)
+ The connector is certified and distributed by Microsoft with Power BI updates. Just click "Get data" and look for *Industrial App Store* data connector.
 
 ### Log in
 
@@ -46,7 +44,7 @@ During the log in process you can authorise Power BI to access your data sources
 | Tag Value Field     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                 	|
 
 
-* **Get Processed** :key:</br>Perform aggregated or processed data query.
+* **Get Processed**</br>Perform aggregated or processed data query.
 
 | Name             	| Required 	| Type   	| Description                                                                                                       	| Default 	| Example                          	|
 |------------------	|----------	|--------	|-------------------------------------------------------------------------------------------------------------------	|---------	|----------------------------------	|
@@ -57,7 +55,7 @@ During the log in process you can authorise Power BI to access your data sources
 | Sample Interval  	| true    	| string 	| The sample interval.                                                                                              	| *n/a*   	| *20s, 3h, 1d* |
 | Tag Value Field  	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
 
-* **Get Plot** :key:</br>Performs a historical data query using *Plot* data function.
+* **Get Plot**</br>Performs a historical data query using *Plot* data function.
 
 | Name        	| Required 	| Type   	|Description                                                                                                                | Default 	| Example                      	|
 |-------------	|----------	|--------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|------------------------------	|
@@ -67,7 +65,7 @@ During the log in process you can authorise Power BI to access your data sources
 | Plot Width (Pixels)| true    	| string 	| Plot functions on size of screen area, only importing the necessary data to accurately visualise the data trend over time. Enter in your approximate screen width.                                                                                                                                                               	| *n/a*   	| *1920, 720, 100*                  	|
 | Tag Value Field| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
 
-* **Get Raw** :key:</br>Performs a historical data query using *Raw* data function.
+* **Get Raw** </br>Performs a historical data query using *Raw* data function.
 
 | Name        	| Required 	| Type   	| Description                                                                                                                                                                                                   	| Default 	| Example                      	|
 |-------------	|----------	|--------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|------------------------------	|
@@ -77,7 +75,7 @@ During the log in process you can authorise Power BI to access your data sources
 | Maximum Sample Count   	| true    	| string 	| The maximum number of points to return per tag.                                                                                                                                                               	| *n/a*   	| *20s, 3h, 1d*                  	|
 | Tag Value Field     	| false    	| option 	| Indicate whether to display numerical, string or both tag values. Some tags (digital) might indicate a status which has a more meaningful text value, e.g. OFF, representation than a numerical value, e.g. 0. 	| Numeric 	|                              	|
 
-* **Get Data** :key:</br>Performs a historical data query. <br>**NB - This is a legacy function. We recommend using Get Processed or Get Plot instead.**</br>
+* **Get Data**</br>Performs a historical data query. <br>**NB - This is a legacy function. We recommend using Get Processed or Get Plot instead.**</br>
 
 | Name             	| Required 	| Type   	| Description                                                                                                       	| Default 	| Example                          	|
 |------------------	|----------	|--------	|-------------------------------------------------------------------------------------------------------------------	|---------	|----------------------------------	|
@@ -92,7 +90,7 @@ During the log in process you can authorise Power BI to access your data sources
 ## Alarm Specific
 These options only appear when selecting an Alarm Analysis data source.
 
-* **Bad Actors** :key:</br>Alarm Specific. Obtains the events that generate the most alarms in the selected asset.
+* **Bad Actors**</br>Alarm Specific. Obtains the events that generate the most alarms in the selected asset.
 
 | Name        	| Required 	| Type   	| Description                                                                                                                                                                                                   	| Default 	| Example                      	|
 |-------------	|----------	|--------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|------------------------------	|
@@ -102,7 +100,7 @@ These options only appear when selecting an Alarm Analysis data source.
 | Report event type   	| false    	| option 	| Choose to import only null, alarm, or intervention type data.                                                                                                                                                               	| *n/a*   	| *null, ALM, INT*                  	|
 | Number of bad actors     	| false    	| string 	| Select how many bad actors to import. E.g., entering "10" would give you the top 10 bad actors. 	| *n/a* 	|  *5, 10, 20*                            	|
 
-* **Sequence of Events** :key:</br>Alarm Specific. Obtain a time ordered history of events associated with the selected asset. This can be filtered to show events related to specific tags.
+* **Sequence of Events**</br>Alarm Specific. Obtain a time ordered history of events associated with the selected asset. This can be filtered to show events related to specific tags.
 
 | Name        	| Required 	| Type   	| Description                                                                                                                                                                                                   	| Default 	| Example                      	|
 |-------------	|----------	|--------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|---------	|------------------------------	|
@@ -254,12 +252,7 @@ Industrial App Store Connector was built using
 
 For any questions please contact Intelligent Plant Ltd [here](https://www.intelligentplant.com/contactus "Intelligent Plant - Contact Us") or fire an email to support@intelligentplant.com.
 
-## Authors
+## Publisher
 
-* Intelligent Plant team, Neil Lyall-Varnas.
-
-## Acknowledgments
-
-* Hat tip to anyone who contributed.
-* Inspiration
+* Intelligent Plant Ltd.
 
